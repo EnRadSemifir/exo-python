@@ -3,6 +3,7 @@ from flask import jsonify
 from flask import abort
 from flask import request
 import services.todo_service as todoService
+import dto.todo_dto as todoDto
 
 # crréation d'une classe qui hérite de FlaskView
 
@@ -25,7 +26,11 @@ class TodosControler(FlaskView):
 
     @route('/', methods=['POST'])
     def create_todo(self):
-        todo = todoService.create_todo()
+        title = request.json['title']
+        description = request.json['description']
+        todo = todoDto(title, description, False)
+        print(todo)
+        todoService.create_todo(todo)
         return jsonify(todo)
 
     @route('/<int:todo_id>', methods=['PUT'])

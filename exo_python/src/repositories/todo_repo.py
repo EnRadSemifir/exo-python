@@ -16,7 +16,9 @@ def get_todo_by_id(todo_id):
 
 
 def create_todo(todo):
-    return "ok"
+    db.session.add(todo)
+    db.session.commit()
+    return "Utilisateur crée"
 
 
 def update_todo(todo_id):
