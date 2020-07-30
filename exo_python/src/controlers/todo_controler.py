@@ -16,7 +16,6 @@ class TodosControler(FlaskView):
     @route('/')
     def get_todos(self):  # definition d'une méthode pour récupérer les todos depuis le service
         todos = todoService.get_todos()  # todos récupérer depuis le service
-
         return jsonify(todos)
 
     @route('/<int:todo_id>')
