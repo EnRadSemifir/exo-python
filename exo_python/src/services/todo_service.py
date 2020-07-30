@@ -4,7 +4,8 @@ import repositories.todo_repo as todoRepo
 
 
 def get_todos():
-    return todoRepo.get_todos()
+    todos = todoRepo.get_todos()
+    return todos
 
 
 def get_todo_by_id(todo_id):
