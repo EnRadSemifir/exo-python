@@ -1,4 +1,6 @@
-import repositories.todoRepo as todoRepo
+import repositories.todo_repo as todoRepo
+
+# défintion d'une méthode pour récupérer les todos dans la base de données avec le repo
 
 
 def get_todos():

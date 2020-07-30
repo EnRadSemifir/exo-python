@@ -3,11 +3,12 @@ from models.todo import Todo
 
 db = SQLAlchemy()
 
+# récupération des données dans la base de données
+
 
 def get_todos():
     todos = Todo.query.all()
-    print(todos)
-    return "ok"
+    return todos
 
 
 def get_todo_by_id(todo_id):

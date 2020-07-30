@@ -2,16 +2,21 @@ from flask_classful import FlaskView, route
 from flask import jsonify
 from flask import abort
 from flask import request
-from flask import jsonify
-import services.todoService as todoService
+import services.todo_service as todoService
+
+# crréation d'une classe qui hérite de FlaskView
 
 
-class TodosView(FlaskView):
+class TodosControler(FlaskView):
+    # définition d'une route de base
     route_base = '/api/todos/'
 
+    # dééfinition de l'extension de la route de base
     @route('/')
-    def get_todos(self):
-        todos = todoService.get_todos()
+    def get_todos(self):  # definition d'une méthode pour récupérer les todos depuis le service
+        todos = todoService.get_todos()  # todos récupérer depuis le service
+        if len(todos) == 0:
+            abort(400)
         return jsonify(todos)
 
     @route('/<int:todo_id>')
