@@ -5,7 +5,7 @@ from flask import request
 import services.todo_service as todoService
 import dto.todo_dto as todoDto
 
-# crréation d'une classe qui hérite de FlaskView
+# création d'une classe qui hérite de FlaskView
 
 
 class TodosControler(FlaskView):
