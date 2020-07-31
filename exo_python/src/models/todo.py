@@ -18,4 +18,4 @@ class Todo(db.Model):
         self.done = done
 
     def __repr__(self):
-        return f'<Client id:{self.id} title:{self.title} description:{self.description} done: {self.done}>'
+        return f'<Todo id:{self.id} title:{self.title} description:{self.description} done: {self.done}>'
