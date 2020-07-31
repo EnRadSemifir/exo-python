@@ -7,7 +7,7 @@ WORKDIR /code
 # permet de placer des variables au niveau de l'OS
 # une variable d'environnement est accessible à toutes les applications
 ENV FLASK_APP app.py
-
+ENV FLASK_RUN_HOST 0.0.0.0
 
 # RUN : permet d'exécuter une commande shell
 RUN apk add --no-cache gcc musl-dev linux-headers

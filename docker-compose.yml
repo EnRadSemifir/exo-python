@@ -11,12 +11,12 @@ services:
         volumes:
             - ./database:/docker-entrypoint-initdb.d:ro
     
-    # exo_python:
-    #     build:
-    #         context: ./exo_python
-    #         dockerfile: Dockerfile
-    #     environment: 
-    #         FLASK_ENV: development
-    #         FLASK_APP: app.py
-    #     ports:
-    #         - '5000:5000'
+    exo_python:
+        build:
+            context: ./exo_python
+            dockerfile: Dockerfile
+        environment: 
+            FLASK_ENV: development
+            FLASK_APP: app.py
+        ports:
+            - '5000:5000'
